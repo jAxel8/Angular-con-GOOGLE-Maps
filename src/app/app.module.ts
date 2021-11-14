@@ -4,6 +4,7 @@ import { AgmCoreModule } from "@agm/core";
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NgbPaginationModule } from "@ng-bootstrap/ng-bootstrap";
+import { environment } from 'src/environments/environment.prod';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,7 @@ import { NgbPaginationModule } from "@ng-bootstrap/ng-bootstrap";
     BrowserModule,
     AppRoutingModule,
     AgmCoreModule.forRoot(
-      {apiKey:'AIzaSyAsv6YyCVteGu4LvpreebfdT8LWYltzUf4',
+      {apiKey:environment.apikey,
       libraries: ['places']
     }
     ),
