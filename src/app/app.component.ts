@@ -37,15 +37,14 @@ constructor(private mapsAPILoader: MapsAPILoader,private ngZone: NgZone,private 
       let autocomplete = new google.maps.places.Autocomplete(this.searchElementRef.nativeElement);
       autocomplete.addListener("place_changed", () => {
         this.ngZone.run(() => {
-          //get the place result
+
           let place: google.maps.places.PlaceResult = autocomplete.getPlace();
 
-          //verify result
           if (place.geometry === undefined || place.geometry === null) {
             return;
           }
 
-          //set latitude, longitude and zoom
+
           this.latAca = place.geometry.location.lat();
           this.lngAca= place.geometry.location.lng();
           this.zoom = 12;
